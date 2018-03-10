@@ -2,3 +2,4 @@
 	创建了一个空的 Dynamic Web project,后直接push。
 # shiyi_ojbk v1.0
 	打可一个基本的javaee 框架。
+	3.10 更正 admin为user,优化结构。
