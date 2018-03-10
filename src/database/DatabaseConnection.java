@@ -1,20 +1,14 @@
 package database;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
-import org.eclipse.jdt.internal.compiler.batch.Main;
-
-import com.sun.org.apache.xerces.internal.util.Status;
 
 /**
  * MySQL连接 层,实现远程连接,统一管理连接的通与短
  * 实例化一个对象的时候 自动创建连接
  * 上层使用后应该 立即 调用 close 方法。
- * 垃圾回收一个对象的时候 会检测是否调用close方法，如未调用则调用
+ * 垃圾回收一个对象的时候 会检测是否调用close方法，如未调用则调用 
+
  * 
  * 实例化后 调用 getStatement()方法即可获得 连接对象。
  * 

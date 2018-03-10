@@ -8,8 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import net.ojbk.admin.Admin;
-import net.ojbk.admin.AdminHandle;
+import net.ojbk.user.*;
 
 /**
  * Servlet implementation class AdminLogin
@@ -19,7 +18,7 @@ import net.ojbk.admin.AdminHandle;
  * @author twobox
  * @version v1.0
  */
-@WebServlet("/AdminLogin")
+@WebServlet("/UserLogin")
 public class UserLogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -43,16 +42,16 @@ public class UserLogin extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Admin admin = new Admin();
-		AdminHandle adminHandle = new AdminHandle();
+		User user = new User();
+		UserHandle userHandle = new UserHandle();
 		
-		String admName = request.getParameter("textid");
-		String admPassword = request.getParameter("textPassword");
+		String userName = request.getParameter("textid");
+		String userPassword = request.getParameter("textPassword");
 		
-		admin.setAdmName(admName);
-		admin.setAdmPassword(admPassword);
+		user.setUserName(userName);
+		user.setUserPassword(userPassword);
 		
-		if (adminHandle.checkAdmin(admin)) {
+		if (userHandle.checkUser(user)) {
 			HttpSession session = request.getSession(); // 获取会话
 			session.setAttribute("login", "ok");
 			session.setMaxInactiveInterval(-1);
